@@ -2,20 +2,28 @@
   "name": "zp-common-utils",
   "private": true,
   "author": {
-    "name": "zp",
+    "name": "zpwan",
     "url": "https://github.com/wzp123321"
   },
   "version": "0.0.1",
   "type": "module",
-  "files": ["dist/"],
+  "files": [
+    "dist/"
+  ],
+  "main": "./lib/zp-common-utils.js",
   "typings": "./typing/index.d.ts",
-  "keywords": ["vue", "vite", "utils"],
+  "keywords": [
+    "vue",
+    "vite",
+    "utils"
+  ],
   "scripts": {
     "dev": "vite",
     "build": "vue-tsc && vite build",
     "preview": "vite preview"
   },
   "dependencies": {
+    "spark-md5": "^3.0.2",
     "vue": "^3.4.21"
   },
   "devDependencies": {
@@ -24,5 +32,7 @@
     "vite": "^5.2.0",
     "vue-tsc": "^2.0.6"
   },
-  "repository": {"url": ""}
+  "repository": {
+    "url": "https://github.com/wzp123321/zp-common-utils.git"
+  }
 }
