@@ -1,5 +1,3 @@
-import SparkMD5 from 'spark-md5';
-
 /**
  * 文件上传处理
  * @param accept 允许的后缀
@@ -85,30 +83,6 @@ export const FDownLoadHandler = (url: string, name?: string): Promise<void> => {
     } else {
       reject(`无法下载${name || '文件'}`);
     }
-  });
-};
-
-/**
- * 获取文件md5
- * @param file
- * @returns {Promise<string | null>}
- */
-export const mapFileMD5 = (file: File): Promise<string | null> => {
-  return new Promise((resolve) => {
-    if (!file) {
-      resolve(null);
-      return;
-    }
-
-    const fileReader = new FileReader();
-    const spark = new SparkMD5.ArrayBuffer();
-    // 获取文件二进制数据
-    fileReader.readAsArrayBuffer(file);
-    fileReader.onload = (e: ProgressEvent) => {
-      spark.append((e.target as any).result);
-      const md5 = spark.end();
-      resolve(md5);
-    };
   });
 };
 

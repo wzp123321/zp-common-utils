@@ -1,17 +1,24 @@
 {
   "name": "zp-common-utils",
-  "private": true,
+  "public": true,
+  "type": "module",
   "author": {
     "name": "zpwan",
     "url": "https://github.com/wzp123321"
   },
-  "version": "0.0.1",
-  "type": "module",
+  "version": "0.0.4",
   "files": [
-    "dist/"
+    "lib"
   ],
-  "main": "./lib/zp-common-utils.js",
+  "main": "./lib/zp-common-utils.umd.cjs",
   "typings": "./typing/index.d.ts",
+  "module": "./lib/zp-common-utils.js",
+  "exports":{
+    ".": {
+      "import": "./lib/zp-common-utils.js",
+      "require": "./lib/zp-common-utils.umd.cjs"
+    }
+  },
   "keywords": [
     "vue",
     "vite",
@@ -23,7 +30,6 @@
     "preview": "vite preview"
   },
   "dependencies": {
-    "spark-md5": "^3.0.2",
     "vue": "^3.4.21"
   },
   "devDependencies": {
@@ -34,5 +40,26 @@
   },
   "repository": {
     "url": "https://github.com/wzp123321/zp-common-utils.git"
-  }
+  },
+  "eslintConfig": {
+    "root": true,
+    "env": {
+      "node": true
+    },
+    "extends": [
+      "plugin:vue/vue3-essential",
+      "eslint:recommended",
+      "@vue/typescript/recommended"
+    ],
+    "parserOptions": {
+      "ecmaVersion": 2020
+    },
+    "rules": {}
+  },
+  "browserslist": [
+    "> 1%",
+    "last 2 versions",
+    "not dead",
+    "not ie 11"
+  ]
 }
