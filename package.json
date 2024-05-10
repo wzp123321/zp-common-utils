@@ -6,14 +6,14 @@
     "name": "zpwan",
     "url": "https://github.com/wzp123321"
   },
-  "version": "0.0.4",
+  "version": "0.0.7",
   "files": [
     "lib"
   ],
   "main": "./lib/zp-common-utils.umd.cjs",
-  "typings": "./typing/index.d.ts",
   "module": "./lib/zp-common-utils.js",
-  "exports":{
+  "types": "./lib/index.d.ts",
+  "exports": {
     ".": {
       "import": "./lib/zp-common-utils.js",
       "require": "./lib/zp-common-utils.umd.cjs"
@@ -36,6 +36,7 @@
     "@vitejs/plugin-vue": "^5.0.4",
     "typescript": "^5.2.2",
     "vite": "^5.2.0",
+    "vite-plugin-dts": "^3.9.1",
     "vue-tsc": "^2.0.6"
   },
   "repository": {

@@ -4,4 +4,4 @@
  * @param {string} returnType
  * @returns {string}
  */
-export declare function thousandSeparation(value: number, returnType?: string): string
+export declare const thousandSeparation: (value: number, returnType?: string) => string;

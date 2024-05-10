@@ -1,3 +1,7 @@
 /// <reference types="vite/client" />
 
-declare module 'spark-md5';
+declare module 'vue' {
+  export interface GlobalComponents {
+    ZpCommonUtils: typeof ZpCommonUtils;
+  }
+}
