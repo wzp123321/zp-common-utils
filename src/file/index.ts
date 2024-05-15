@@ -35,7 +35,6 @@ export const transferFileToUrl = (file: File) => {
   }
   return url;
 };
-
 /**
  * 二进制响应处理
  * @param blob 二进制流
@@ -65,7 +64,6 @@ export const FBlobHandler = (blob: Blob, name?: string): Promise<void> => {
     }
   });
 };
-
 /**
  * 文件下载处理
  * @param url 源路径
@@ -85,7 +83,6 @@ export const FDownLoadHandler = (url: string, name?: string): Promise<void> => {
     }
   });
 };
-
 /**
  * 文件分片
  * @param file
@@ -107,4 +104,14 @@ export const mapFileChunks = (file: File) => {
   }
 
   return chunks;
+};
+/**
+ * 获取文件后缀名
+ * @param file 文件
+ * @returns 后缀名
+ */
+export const getFileExtension = (file: File) => {
+  const name = file.name;
+  const arr = name.split('.');
+  return arr[arr.length - 1];
 };

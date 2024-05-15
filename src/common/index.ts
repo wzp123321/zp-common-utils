@@ -2,7 +2,6 @@ export interface ISize {
   width: number;
   height: number;
 }
-
 /**
  * 标签尺寸计算器
  * @param label 标签文本
@@ -23,4 +22,16 @@ export const FLabelSizeCalculator = (label: string, fontSize = '14px', lineHeigh
   const height = element.clientHeight;
   document.body.removeChild(element);
   return { width, height };
+};
+/**
+ * 获取地址参数项
+ * @param key 参数名
+ * @returns 参数名对应的值
+ */
+export const FGetQueryParam = (key: string): string | undefined => {
+  const reg = new RegExp(`(^|&)${key}=([^&]*)(&|$)`, 'i');
+  const match = window.location.search.substring(1).match(reg) ?? '';
+  if (match.length > 2) {
+    return decodeURIComponent(match[2]);
+  }
 };
