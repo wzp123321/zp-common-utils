@@ -115,3 +115,16 @@ export const getFileExtension = (file: File) => {
   const arr = name.split('.');
   return arr[arr.length - 1];
 };
+/**
+ * 格式化文件单位
+ * @param {number} size  文件大小(kb)
+ * @returns string
+ */
+export const fileFormatSize = (size: number): string => {
+  let i;
+  const unit = ['B', 'KB', 'MB', 'GB', 'TB', 'PB'];
+  for (i = 0; i < unit.length && size >= 1024; i++) {
+    size /= 1024;
+  }
+  return (Math.round(size * 100) / 100 || 0) + unit[i];
+};
