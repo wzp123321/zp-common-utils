@@ -1,7 +1,9 @@
 import { defineConfig } from 'vite';
 import vue from '@vitejs/plugin-vue';
+// 生成ts声明文件
 import dts from 'vite-plugin-dts';
 // 配置参考vueuse
+
 /**
  * @type {import('vite').UserConfig}
  */

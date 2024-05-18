@@ -1,22 +1,24 @@
 {
   "name": "zp-common-utils",
-  "public": true,
   "type": "module",
   "author": {
     "name": "zpwan",
     "url": "https://github.com/wzp123321"
   },
-  "version": "0.0.8",
+  "description": "Vue Utils",
+  "public": true,
+  "version": "0.1.20",
   "files": [
     "lib"
   ],
   "main": "./lib/zp-common-utils.umd.cjs",
   "module": "./lib/zp-common-utils.js",
-  "types": "./lib/index.d.ts",
+  "typings": "./lib/index.d.ts",
   "exports": {
     ".": {
       "import": "./lib/zp-common-utils.js",
-      "require": "./lib/zp-common-utils.umd.cjs"
+      "require": "./lib/zp-common-utils.umd.cjs",
+      "types": "./lib/index.d.ts"
     }
   },
   "keywords": [
@@ -35,6 +37,7 @@
   },
   "devDependencies": {
     "@types/crypto-js": "^4.2.2",
+    "@types/node": "^20.12.12",
     "@vitejs/plugin-vue": "^5.0.4",
     "typescript": "^5.2.2",
     "vite": "^5.2.0",
@@ -49,11 +52,6 @@
     "env": {
       "node": true
     },
-    "extends": [
-      "plugin:vue/vue3-essential",
-      "eslint:recommended",
-      "@vue/typescript/recommended"
-    ],
     "parserOptions": {
       "ecmaVersion": 2020
     },
