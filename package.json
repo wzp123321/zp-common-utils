@@ -6,7 +6,7 @@
     "name": "zpwan",
     "url": "https://github.com/wzp123321"
   },
-  "version": "0.0.7",
+  "version": "0.0.8",
   "files": [
     "lib"
   ],
@@ -30,9 +30,11 @@
     "preview": "vite preview"
   },
   "dependencies": {
+    "crypto-js": "^4.2.0",
     "vue": "^3.4.21"
   },
   "devDependencies": {
+    "@types/crypto-js": "^4.2.2",
     "@vitejs/plugin-vue": "^5.0.4",
     "typescript": "^5.2.2",
     "vite": "^5.2.0",
