@@ -32,3 +32,15 @@ export declare const mapFileChunks: (file: File) => {
     index: number;
     data: Blob;
 }[];
+/**
+ * 获取文件后缀名
+ * @param file 文件
+ * @returns 后缀名
+ */
+export declare const getFileExtension: (file: File) => string;
+/**
+ * 格式化文件单位
+ * @param {number} size  文件大小(kb)
+ * @returns string
+ */
+export declare const fileFormatSize: (size: number) => string;
