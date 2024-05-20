@@ -7,7 +7,7 @@
   },
   "description": "Vue Utils",
   "public": true,
-  "version": "0.1.20",
+  "version": "0.2.4",
   "files": [
     "lib"
   ],
@@ -24,12 +24,16 @@
   "keywords": [
     "vue",
     "vite",
-    "utils"
+    "utils",
+    "typescript",
+    "lib",
+    "npm"
   ],
   "scripts": {
     "dev": "vite",
-    "build": "vue-tsc && vite build",
-    "preview": "vite preview"
+    "update": "esno scripts/update.ts",
+    "build": "npm run update && vue-tsc && vite build",
+    "docs:build": "vuepress build docs"
   },
   "dependencies": {
     "crypto-js": "^4.2.0",
@@ -39,6 +43,7 @@
     "@types/crypto-js": "^4.2.2",
     "@types/node": "^20.12.12",
     "@vitejs/plugin-vue": "^5.0.4",
+    "esbuild-register": "^3.5.0",
     "typescript": "^5.2.2",
     "vite": "^5.2.0",
     "vite-plugin-dts": "^3.9.1",
