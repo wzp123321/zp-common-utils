@@ -44,6 +44,10 @@ export default {
 
 ## 🚀 更新日志
 
+##### 2024-0521
+
+- 集成 eslint、stylelint、prettier、commitlint、husky、lint-staged 等工具-----https://juejin.cn/post/7118294114734440455(代码中还是有些报红需要看下)
+
 ##### 2024-05-20
 
 - 新增 vue 过滤指令开发
