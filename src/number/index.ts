@@ -145,7 +145,7 @@ export const convertToChinaNum = (num: number): string => {
   for (let i = 0; i < english.length; i++) {
     const des_i = english.length - 1 - i; //倒序排列设值
     result = arr2[i] + result;
-    const arr1_index = english[des_i] as any;
+    const arr1_index = +english[des_i];
     result = arr1[arr1_index] + result;
   }
   //将【零千、零百】换成【零】 【十零】换成【十】
@@ -177,12 +177,12 @@ export const convertNumberToAmountInWords = (value: number | null): string => {
   let unit = '千百拾亿千百拾万千百拾元角分';
   let str = '';
   num += '00';
-  let indexPoint = num.indexOf('.'); // 如果是小数，截取小数点前面的位数
+  const indexPoint = num.indexOf('.'); // 如果是小数，截取小数点前面的位数
   if (indexPoint >= 0) {
     num = num.substring(0, indexPoint) + num.substring(indexPoint + 1, 2); // 若为小数，截取需要使用的unit单位
   }
   unit = unit.substring(unit.length - num.length); // 若为整数，截取需要使用的unit单位
-  for (var i = 0; i < num.length; i++) {
+  for (let i = 0; i < num.length; i++) {
     str += '零壹贰叁肆伍陆柒捌玖'.charAt(Number(num.charAt(i))) + unit.charAt(i); //遍历转化为大写的数字
   }
   return str

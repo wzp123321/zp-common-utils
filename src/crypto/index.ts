@@ -9,13 +9,13 @@ const iv = CryptoJS.enc.Utf8.parse('123NANJINTTIANSU'); //十六位十六进制�
  * @returns {string} 加密之后的密文
  */
 export const encrypt = (word: string) => {
-	const srcs = CryptoJS.enc.Utf8.parse(word);
-	const encrypted = CryptoJS.AES.encrypt(srcs, key, {
-		iv,
-		mode: CryptoJS.mode.CBC,
-		padding: CryptoJS.pad.Pkcs7,
-	});
-	return encrypted.ciphertext.toString().toUpperCase();
+  const srcs = CryptoJS.enc.Utf8.parse(word);
+  const encrypted = CryptoJS.AES.encrypt(srcs, key, {
+    iv,
+    mode: CryptoJS.mode.CBC,
+    padding: CryptoJS.pad.Pkcs7,
+  });
+  return encrypted.ciphertext.toString().toUpperCase();
 };
 
 /**
@@ -24,13 +24,13 @@ export const encrypt = (word: string) => {
  * @returns {string}  解密之后的明文
  */
 export const decrypt = (word: string) => {
-	const encryptedHexStr = CryptoJS.enc.Hex.parse(word);
-	const srcs = CryptoJS.enc.Base64.stringify(encryptedHexStr);
-	const decrypt = CryptoJS.AES.decrypt(srcs, key, {
-		iv,
-		mode: CryptoJS.mode.CBC,
-		padding: CryptoJS.pad.Pkcs7,
-	});
-	const decryptedStr = decrypt.toString(CryptoJS.enc.Utf8);
-	return decryptedStr.toString();
+  const encryptedHexStr = CryptoJS.enc.Hex.parse(word);
+  const srcs = CryptoJS.enc.Base64.stringify(encryptedHexStr);
+  const decrypt = CryptoJS.AES.decrypt(srcs, key, {
+    iv,
+    mode: CryptoJS.mode.CBC,
+    padding: CryptoJS.pad.Pkcs7,
+  });
+  const decryptedStr = decrypt.toString(CryptoJS.enc.Utf8);
+  return decryptedStr.toString();
 };

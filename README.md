@@ -40,7 +40,7 @@ export default {
 
 - 实现自动生成文档功能
 - 通过指令实现一键发布功能
-- 集成 eslint、stylelint、prettier、commitlint、husky、lint-staged 等工具
+- 集成 eslint、stylelint、prettier、commitlint、husky、lint-staged 等工具-----https://juejin.cn/post/7118294114734440455
 
 ## 🚀 更新日志
 

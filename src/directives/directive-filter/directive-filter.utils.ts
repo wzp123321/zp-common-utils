@@ -2,7 +2,7 @@
  * @Author: wanzp
  * @Date: 2023-04-26 21:15:54
  * @LastEditors: wzp123321 wanzhipengx@163.com
- * @LastEditTime: 2024-02-22 21:10:48
+ * @LastEditTime: 2024-05-21 22:43:43
  * @Description:
  */
 import { DirectiveBinding } from 'vue';
@@ -12,9 +12,9 @@ import { IDirectiveNumberBindingVO, IDirectiveTextBindingVO } from './directive-
  * "123-foo" will be parsed to 123
  * This is used for the .number modifier in v-model
  */
-export const looseToNumber = (val: any): any => {
+export const looseToNumber = (val: string): number  => {
   const n = parseFloat(val);
-  return isNaN(n) ? val : n;
+  return isNaN(n) ? Number(val) : n;
 };
 
 export const addEventListener = (
@@ -71,7 +71,7 @@ export const handleTextFilter = (domValue: string, binding: DirectiveBinding<IDi
     domValue = domValue.replace(/\s+/g, '');
   }
   if (!allowChinese) {
-    domValue = domValue.replace(/[^\x00-\xff]/g, '');
+    domValue = domValue.replace(/[^\\x00-\\xff]/g, '');
   }
   return domValue;
 };
@@ -108,7 +108,7 @@ export const handleNumberFilter = (domValue: string, binding: DirectiveBinding<I
     symbol = '-';
     domValue = domValue.substring(1);
   }
-  domValue = domValue.replace(/[^0-9\.]/g, '');
+  domValue = domValue.replace(/[^0-9\\.]/g, '');
   console.log(domValue);
 
   // 处理首位小数点
@@ -139,10 +139,9 @@ export const handleNumberFilter = (domValue: string, binding: DirectiveBinding<I
   if (domValue.includes('.')) {
     domValue = deduplicate(domValue, '.');
     const temp = domValue.split('.');
-    domValue = `${temp[0]}.${temp[1]?.substring(
-      0,
-      (Math.ceil(decimal ?? 0) > 0 ? Math.ceil(decimal) : null) as number,
-    ) ?? ''}`;
+    domValue = `${temp[0]}.${
+      temp[1]?.substring(0, (Math.ceil(decimal ?? 0) > 0 ? Math.ceil(decimal) : null) as number) ?? ''
+    }`;
   }
   console.log(domValue);
 
