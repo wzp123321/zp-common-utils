@@ -1,0 +1,1 @@
+export { useWatermark } from './useWatermark';
